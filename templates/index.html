@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>Welcome!</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Creepster&family=Exo:wght@100;400&family=Libre+Baskerville&family=Permanent+Marker&family=Rhodium+Libre&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+    </head>
+  
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-4">
+              <i class="em em-black_joker"></i>
+              <i class="em em-black_joker"></i>
+              <i class="em em-black_joker"></i>
+          </div>
+          <div class="col-4">
+              <h1>Deck Monsters</h1>
+          </div>
+          <div class="col-4">
+              <i class="em em-black_joker"></i>
+              <i class="em em-black_joker"></i>
+              <i class="em em-black_joker"></i>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class=intro>
+        <p class="text"> This game works basically like the card game 'WAR.' Each player starts with 26 monster cards and those cards face off in battle one at a time. The winner of each battle keeps both cards. Unlike cards in typical "War", moster cards gain a level whenever they win a battle. Additionally, players can choose from three moves: </p>
+        <hr>
+      </div>
+        <div class=options>
+          <div class="row">
+            <div class="col-4">
+          <p class="attack">Magic Strike</p>
+          <p class="text">Deals damage between 50% and 150% of the monster's intelligence.</p>
+            </div>
+            <div class="col-4">
+              <p class="attack">Attack </p>
+              <p class="text">Deals damage equal to the monster's strength</p>
+            </div>
+            <div class="col-4">
+              <p class="attack">Backstab</p>
+              <p class="text">Has a chance, based on dexterity, of dealing 100 damage, or NONE</p>
+          </div>
+        </div>
+        <hr>
+        <form class="text" method="post" action="/setup">
+            <label for="name">What's your name?</label>
+            <input type="text" name="name" placeholder="Enter your name: "/>
+            <input type="submit" value="Submit"/>
+        </form>
+     </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    </body>
+</html>

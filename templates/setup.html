@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Setup</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Creepster&family=Exo:wght@100;400&family=Libre+Baskerville&family=Permanent+Marker&family=Rhodium+Libre&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class = "heading">
+              <h1>Deck Monsters - Round: {{props.turn_count}}</h1>
+            </div>
+          </div>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="card bg-primary bg-gradient">
+            <div class="card-body">
+              <h5 class="card-title text">Your Deck</h5>
+                <h6 class="card-subtitle text mb-2 text-body-secondary">{{props.player_one}}</h6>
+                <img src="/static/images/good_monster3.jpg" alt="good monster deck">
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="battlespace">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card bg-danger bg-gradient">
+            <div class="card-body">
+              <h5 class="card-title text">Enemy Deck</h5>
+                <h6 class="card-subtitle text mb-2 text-body-secondary">{{props.computer_player}}</h6>
+                <img src="/static/images/evil_monster.jpg" alt="good monster deck">
+            </div>
+          </div>
+        </div>
+      </div>
+        <hr>
+        <form class="text" method="post" action="/battle">
+            <input type="submit" value="Let's go!"/>
+        </form>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Battle Results</title>
+        <link rel="stylesheet" href="../static/css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link href="https://emoji-css.afeld.me/emoji.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Creepster&family=Exo:wght@100;400&family=Libre+Baskerville&family=Permanent+Marker&family=Rhodium+Libre&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class = "heading">
+              <h1>Deck Monsters - Round: {{props.turn_count}}</h1>
+            </div>
+          </div>
+        <hr>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div class="card bg-primary bg-gradient">
+            <div class="card-body">
+              <h5 class="card-title">Your Deck</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{props.player_one}}</h6>
+                <img src="/static/images/good_monster3.jpg" alt="good monster deck">
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="battlespace">
+            <table class="text player">
+              <tr>
+                <th>Your Monster</th>
+                <td>{{props.player_one_cards[-1]}}</td>
+              </tr>
+            <tr>
+              <th>Level</th>
+              <td>{{props.player_one_cards[-1].level}}</td>
+            </tr>
+            <tr>
+              <th>Strength</th>
+              <td>{{props.player_one_cards[-1].strength}}</td>
+            </tr>
+            <tr>
+              <th>Dexterity</th>
+              <td>{{props.player_one_cards[-1].dexterity}}</td>
+            </tr> 
+            <tr>
+              <th>Intelligence</th>
+              <td>{{props.player_one_cards[-1].intelligence}}</td>
+            </tr>
+            </table>
+            <h2 class="pdmg">{{props.attack_type}}: {{props.player_power}}</h2>
+            <h2 class="edmg">{{props.two_attack}}:{{props.two_power}}</h2>
+            <table class="text enemy">
+              <tr>
+                <th>Enemy Monster</th>
+                <td>{{props.computer_cards[-1]}}</td>
+              </tr>
+            <tr>
+              <th>Level</th>
+              <td>{{props.computer_cards[-1].level}}</td>
+            </tr>
+            <tr>
+              <th>Strength</th>
+              <td>{{props.computer_cards[-1].strength}}</td>
+            </tr>
+            <tr>
+              <th>Dexterity</th> 
+              <td>{{props.computer_cards[-1].dexterity}}</td>
+            </tr>
+            <tr>
+              <th>Intelligence</th>
+              <td>{{props.computer_cards[-1].intelligence}}</td>
+            </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card bg-danger bg-gradient">
+            <div class="card-body">
+              <h5 class="card-title">Enemy Deck</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{props.computer_player}}</h6>
+                <img src="/static/images/evil_monster.jpg" alt="good monster deck">
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+        {% if props.battle_result == "one_wins" %}
+        <form method="post" action="/battle">
+          <input class="attack" name="battle_result" type="submit" value="Next Battle">
+          <label class="attack">You capture {{props.two_len}} monsters and {{props.player_one_cards[-1]}} is now level {{props.player_one_cards[-1].level}}</label>
+        </form>
+        {% elif props.battle_result == "two_wins" %}
+        <form class="attack" method="post" action="/battle">
+          <input name="battle_result" type="submit" value="Next Battle">
+          <label class="attack">You lose {{props.one_len}} monsters and {{props.computer_cards[-1]}} is now level {{props.computer_cards[-1].level}}</label>
+        </form>
+        {% else %}
+        <form class="attack" method="post" action="/war">
+          <input name="battle_result" type="submit" value="Prepare for War">
+          <label class="attack">You each deal 3 more monster cards as hostages and battle again to capture them all.</label>
+        </form>
+        {% endif %}
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+body{
+  background-color: lightslategray
+}
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: darkslategray;
+  padding-bottom: 16px;
+  padding-top: 16px;
+}
+.text {
+  font-family: 'Exo', sans-serif;
+  font-size: 18px
+}
+
+.attack {
+  font-family: 'Caveat', cursive;
+   font-size: 30px
+}
+
+img {
+    max-width: 100% ;
+    height: auto;
+}
+
+.em{
+  font-size: 30px;
+  padding: 10px;
+  text-align: center !important;
+  align-content: center !important;
+  align-items: center !important;
+}
+
+.player {
+  border-collapse: collapse;
+  box-shadow: 5px 5px 20px blue;
+  padding: 10px;
+  border: 2px solid;
+  color: black
+}
+.enemy {
+  border-collapse: collapse;
+  box-shadow: 5px 5px 20px orangered;
+  padding: 10px;
+  border: 2px solid;
+  color: black
+}
+td{
+  border: 2px solid;
+  color: black
+}
+th{
+  border: 2px solid;
+  color: black
+}
+tr{
+  border: 2px solid;
+  color: black
+}
+
+.pdmg {
+  font-family: 'Swanky and Moo Moo', cursive;
+  color: blue !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+.edmg {
+  font-family: 'Swanky and Moo Moo', cursive;
+  color: orangered !important;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.war{
+  font-family: 'Permanent Marker', cursive;
+  text-align: center;
+  color: orangered;
+  padding-bottom: 16px;
+  padding-top: 16px;
+  font-size: 40px
+}
